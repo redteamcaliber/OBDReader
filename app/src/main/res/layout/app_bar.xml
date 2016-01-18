@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2015 Massimo Cannavo
+
+    You should have received a copy of the license
+    along with OBDReader; see the file LICENSE.
+
+    Programmer:  Massimo Cannavo
+    Email:       Massimocannavo15@gmail.com
+    Date:        Sat Apr 04 2015 14:16:22 GMT-0700
+
+    Description: The app_bar file defines the layout
+                 of the app bar (toolbar) of the app.
+-->
+
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/lightBlue"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+</android.support.v7.widget.Toolbar>

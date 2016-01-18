@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2015 Massimo Cannavo
+
+    You should have received a copy of the license
+    along with OBDReader; see the file LICENSE.
+
+    Programmer:  Massimo Cannavo
+    Email:       Massimocannavo15@gmail.com
+    Date:        Wed Apr 01 2015 14:30:19
+
+    Description: The manifest file presents essential
+                 information about your app to the Android
+                 system, information the system must have
+                 before it can run any of the app's code.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.massimoc.obdreader" >
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/appName"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name="com.massimoc.obdreader.MainActivity"
+            android:label="@string/appName" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.massimoc.obdreader.BluetoothActivity"
+            android:label="@string/appName"
+            android:parentActivityName="com.massimoc.obdreader.MainActivity"
+            tools:ignore="UnusedAttribute">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.massimoc.obdreader.MainActivity" />
+
+            <intent-filter>
+                <action android:name="BluetoothActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

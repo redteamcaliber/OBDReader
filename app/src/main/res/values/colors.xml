@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2015 Massimo Cannavo
+
+    You should have received a copy of the license
+    along with OBDReader; see the file LICENSE.
+
+    Programmer:  Massimo Cannavo
+    Email:       Massimocannavo15@gmail.com
+    Date:        Sat Apr 04 2015 13:20:11
+
+    Description: The colors file defines the colors
+                 used by the app.
+-->
+
+<resources>
+    <color name="lightBlue">#4FC3F7</color>
+    <color name="lightBlueDark">#29B6F6</color>
+    <color name="green">#81C784</color>
+    <color name="greenDark">#66BB6A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="darkGrey">#212121</color>
+</resources>

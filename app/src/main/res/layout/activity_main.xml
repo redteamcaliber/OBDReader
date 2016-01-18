@@ -1,0 +1,92 @@
+<!--
+    Copyright (C) 2015 Massimo Cannavo
+
+    You should have received a copy of the license
+    along with OBDReader; see the file LICENSE.
+
+    Programmer:  Massimo Cannavo
+    Email:       Massimocannavo15@gmail.com
+    Date:        Sat Apr 04 2015 15:34:48
+
+    Description: The main activity xml file
+                 contains the layout for the
+                 main activity.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/lightBlue"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/app_bar">
+    </include>
+
+    <TextView
+        android:id="@+id/carStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/carStatus"
+        android:padding="10dp"
+        android:background="@color/lightBlue"
+        android:textColor="@color/white"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_below="@+id/appBar"
+        android:layout_alignLeft="@+id/faultCodes"
+        android:layout_alignStart="@+id/faultCodes" />
+
+    <TextView
+        android:id="@+id/faultCodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/faultCodes"
+        android:padding="10dp"
+        android:background="@color/lightBlue"
+        android:textColor="@color/white"
+        android:layout_marginLeft="87dp"
+        android:layout_marginStart="87dp"
+        android:layout_below="@+id/carStatus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/connectionStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connectStatus"
+        android:padding="10dp"
+        android:background="@color/lightBlue"
+        android:textColor="@color/white"
+        android:layout_above="@+id/faultCodes"
+        android:layout_alignLeft="@+id/connection"
+        android:layout_alignStart="@+id/connection"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp" />
+
+    <TextView
+        android:id="@+id/connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connection"
+        android:padding="10dp"
+        android:background="@color/lightBlue"
+        android:textColor="@color/white"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/connectionStatus"
+        android:layout_toRightOf="@+id/carStatus"
+        android:layout_toEndOf="@+id/carStatus" />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/menu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/faultCodes"
+        android:stackFromBottom="true" />
+</RelativeLayout>

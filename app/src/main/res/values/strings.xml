@@ -1,0 +1,28 @@
+<!--
+    Copyright (C) 2015 Massimo Cannavo
+
+    You should have received a copy of the license
+    along with OBDReader; see the file LICENSE.
+
+    Programmer:  Massimo Cannavo
+    Email:       Massimocannavo15@gmail.com
+    Date:        Wed Apr 01 2015 14:30:19
+
+    Description: The strings file contains the
+                 strings used by the app.
+-->
+
+<resources>
+    <string name="appName">OBDReader</string>
+    <string name="connect">Connect</string>
+    <string name="diagnostics">Diagnostics</string>
+    <string name="codes">Codes</string>
+    <string name="settings">Settings</string>
+    <string name="bluetoothIcon">Bluetooth Icon</string>
+    <string name="itemIcon">Item Icon</string>
+    <string name="availableDevices">AVAILABLE DEVICES</string>
+    <string name="faultCodes">Fault Codes</string>
+    <string name="carStatus">OK</string>
+    <string name="connectStatus">NO</string>
+    <string name="connection">Connection</string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2015 Massimo Cannavo
+
+    You should have received a copy of the license
+    along with OBDReader; see the file LICENSE.
+
+    Programmer:  Massimo Cannavo
+    Email:       Massimocannavo15@gmail.com
+    Date:        Thu Apr 02 2015 13:46:17
+
+    Description: The bluetooth row xml file contains
+                 the layout for each row of the list
+                 view that displays the discovered
+                 Bluetooth devices.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ImageView
+        android:id="@+id/bluetoothIcon"
+        android:src="@drawable/ic_action_bluetooth_blue"
+        android:contentDescription="@string/bluetoothIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/bluetoothDevice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bluetoothIcon"
+        android:layout_toRightOf="@+id/bluetoothIcon"
+        android:layout_alignTop="@+id/bluetoothIcon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:paddingTop="20dp"
+        android:textColor="@color/white"
+        tools:ignore="RtlHardcoded" />
+</RelativeLayout>
