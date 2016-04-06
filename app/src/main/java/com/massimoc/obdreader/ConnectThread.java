@@ -59,7 +59,8 @@ public class ConnectThread extends Thread {
         final UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
         try {
-            mSocket = device.createRfcommSocketToServiceRecord(uuid);
+            //mSocket = device.createRfcommSocketToServiceRecord(uuid);
+            mSocket = device.createInsecureRfcommSocketToServiceRecord(uuid);
             mInputStream = mSocket.getInputStream();
             outputStream = mSocket.getOutputStream();
         }
