@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-    Copyright (C) 2015 Massimo Cannavo
+    item_row.xml
 
-    You should have received a copy of the license
-    along with OBDReader; see the file LICENSE.
+    Author:      Massimo Cannavo
 
-    Programmer:  Massimo Cannavo
-    Email:       Massimocannavo15@gmail.com
     Date:        Mon May 11 2015 22:47:52
 
-    Description: The item row xml file contains
-                 the layout for each row of the list
-                 view that displays the menu of the app.
+    Description: The item row xml file contains the layout for each row of the
+                 list view that displays the menu of the app.
 -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

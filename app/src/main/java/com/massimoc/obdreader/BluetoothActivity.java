@@ -1,23 +1,17 @@
 /*
-    Copyright (C) 2015 Massimo Cannavo
+    BluetoothActivity.java
 
-    You should have received a copy of the license
-    along with OBDReader; see the file LICENSE.
+    Author:      Massimo Cannavo
 
-    Programmer:  Massimo Cannavo
-    Email:       Massimocannavo15@gmail.com
     Date:        Wed Apr 01 2015 14:30:19
 
-    Description: The Bluetooth activity of the
-                 OBDReader app will interface
-                 with the Bluetooth class to
-                 display the available Bluetooth
-                 devices that can be connected to.
+    Description: The Bluetooth activity of the OBDReader app will interface with
+                 the Bluetooth class to display the available Bluetooth devices
+                 that can be connected to.
 */
 
 package com.massimoc.obdreader;
 
-import android.annotation.TargetApi;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -40,10 +34,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-// The Bluetooth activity will display a list of
-// devices that are enabled for communication.
-public class BluetoothActivity extends ActionBarActivity {
-
+// The Bluetooth activity will display a list of devices that are enabled for
+// communication.
+public class BluetoothActivity extends ActionBarActivity
+{
     // The Bluetooth adapter used to communicate with
     // the Bluetooth interface of the phone.
     private BluetoothAdapter mBluetoothAdapter;
@@ -68,12 +62,13 @@ public class BluetoothActivity extends ActionBarActivity {
     // The connection thread for the Bluetooth connection.
     private ConnectThread mConnection;
 
-    // Initializes the Bluetooth activity by overriding
-    // the onCreate() method and setting the view to
-    // the xml layout file. The xml layout file contains
-    // the graphical representation of the activity.
+    // Initializes the Bluetooth activity by overriding the
+    // onCreate() method and setting the view to the xml layout
+    // file. The xml layout file contains the graphical representation
+    // of the activity.
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bluetooth_activity);
 
@@ -82,7 +77,10 @@ public class BluetoothActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        // Enable material design Android 5.0 (API level 21 and above) for
+        // Android devices compatible with Android Lollipop or greater.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        {
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -108,19 +106,22 @@ public class BluetoothActivity extends ActionBarActivity {
 
         // Navigates back to the parent activity on the click of
         // the up navigation icon.
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                NavUtils.navigateUpFromSameTask(
-                        BluetoothActivity.this);
+            public void onClick(View v)
+            {
+                NavUtils.navigateUpFromSameTask(BluetoothActivity.this);
             }
         });
 
         // Listens for the Bluetooth device that was selected from the list view.
         // Initiates the thread connection with the selected Bluetooth device.
-        bluetoothList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        bluetoothList.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
                 mBluetoothAdapter.cancelDiscovery();
 
                 UI ui = new UI();
@@ -128,47 +129,49 @@ public class BluetoothActivity extends ActionBarActivity {
 
                 mConnection = new ConnectThread(mDevicesArray.get(position),
                         BluetoothActivity.this, threadHandler);
+
                 mConnection.executeConnection();
 
-                if (threadHandler.hasMessages(threadHandler.getSuccessConnect())) {
+                if (threadHandler.hasMessages(threadHandler.getSuccessConnect()))
                     BluetoothActivity.this.finish();
-                }
             }
         });
 
         broadcastReceiver();
     }
 
-    // Registers the broadcast receiver to listen for
-    // discovered Bluetooth devices that are enabled.
-    private void broadcastReceiver() {
-        mReceiver = new BroadcastReceiver() {
+    // Registers the broadcast receiver to listen for discovered
+    // Bluetooth devices that are enabled.
+    private void broadcastReceiver()
+    {
+        mReceiver = new BroadcastReceiver()
+        {
             @Override
-            public void onReceive(Context context, Intent intent) {
+            public void onReceive(Context context, Intent intent)
+            {
                 String action = intent.getAction();
 
-                switch (action) {
+                switch (action)
+                {
                     case BluetoothDevice.ACTION_FOUND:
                         BluetoothDevice device = intent.getParcelableExtra(
                                 BluetoothDevice.EXTRA_DEVICE);
 
-                        if (device.getName() != null) {
+                        if (device.getName() != null)
                             mDiscoveredDevicesArray.add(device.getName());
-                        }
-                        else {
+
+                        else
                             mDiscoveredDevicesArray.add(device.getAddress());
-                        }
 
                         mDevicesArray.add(device);
                         devicesTypeArray.add(device.getBluetoothClass().getMajorDeviceClass());
                         mArrayAdapter.notifyDataSetChanged();
                         break;
+
                     case BluetoothAdapter.ACTION_DISCOVERY_STARTED:
                         Toast.makeText(context, "Scanning for Bluetooth devices.",
                                 Toast.LENGTH_LONG).show();
                         break;
-                    default:
-                        // Nothing here.
                 }
             }
         };
@@ -178,32 +181,31 @@ public class BluetoothActivity extends ActionBarActivity {
         filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
         registerReceiver(mReceiver, filter);
 
-        if (mBluetoothAdapter.isDiscovering()) {
+        if (mBluetoothAdapter.isDiscovering())
             mBluetoothAdapter.cancelDiscovery();
-        }
 
         mBluetoothAdapter.startDiscovery();
     }
 
-    // Populates the action items into the action bar
-    // by inflating the xml menu file. The xml menu
-    // file contains the layout of the action items
-    // in the action bar.
+    // Populates the action items into the action bar by inflating
+    // the xml menu file. The xml menu file contains the layout of
+    // the action items in the action bar.
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         getMenuInflater().inflate(R.menu.menu_bluetooth, menu);
         return true;
     }
 
-    // Unregisters the Bluetooth broadcast receiver
-    // and cancel the discovery of Bluetooth devices.
+    // Unregisters the Bluetooth broadcast receiver and cancel
+    // the discovery of Bluetooth devices.
     @Override
-    public void onDestroy() {
+    public void onDestroy()
+    {
         super.onDestroy();
 
-        if (mBluetoothAdapter.isDiscovering()) {
+        if (mBluetoothAdapter.isDiscovering())
             mBluetoothAdapter.cancelDiscovery();
-        }
 
         unregisterReceiver(mReceiver);
     }

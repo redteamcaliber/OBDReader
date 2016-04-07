@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-    Copyright (C) 2015 Massimo Cannavo
+    v21\styles.xml
 
-    You should have received a copy of the license
-    along with OBDReader; see the file LICENSE.
+    Author:      Massimo Cannavo
 
-    Programmer:  Massimo Cannavo
-    Email:       Massimocannavo15@gmail.com
     Date:        Sat Apr 04 2015 12:33:21
 
-    Description: The styles file defines the format
-                 and look for a UI. It contains the
-                 theme that will be used by the app.
+    Description: The styles file defines the format and look for a UI. It
+                 contains the theme that will be used by the app.
 -->
 
 <resources>

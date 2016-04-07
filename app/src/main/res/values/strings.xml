@@ -1,15 +1,11 @@
 <!--
-    Copyright (C) 2015 Massimo Cannavo
+    strings.xml
 
-    You should have received a copy of the license
-    along with OBDReader; see the file LICENSE.
+    Author:      Massimo Cannavo
 
-    Programmer:  Massimo Cannavo
-    Email:       Massimocannavo15@gmail.com
     Date:        Wed Apr 01 2015 14:30:19
 
-    Description: The strings file contains the
-                 strings used by the app.
+    Description: The strings file contains the strings used by the app.
 -->
 
 <resources>

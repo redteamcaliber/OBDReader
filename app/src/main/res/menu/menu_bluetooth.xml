@@ -1,16 +1,12 @@
 <!--
-    Copyright (C) 2015 Massimo Cannavo
+    menu_bluetooth.xml
 
-    You should have received a copy of the license
-    along with OBDReader; see the file LICENSE.
+    Author:      Massimo Cannavo
 
-    Programmer:  Massimo Cannavo
-    Email:       Massimocannavo15@gmail.com
     Date:        Thu Apr 02 2015 12:42:58
 
-    Description: The menu bluetooth file contains the layout
-                 of the action items in the action bar for
-                 the bluetooth activity.
+    Description: The menu bluetooth file contains the layout of the action items
+                 in the action bar for the bluetooth activity.
 -->
 
 <menu xmlns:tools="http://schemas.android.com/tools" tools:context=".BluetoothActivity"> </menu>

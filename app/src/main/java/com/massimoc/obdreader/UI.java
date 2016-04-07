@@ -1,17 +1,12 @@
 /*
-    Copyright (C) 2015 Massimo Cannavo
+    UI.java
 
-    You should have received a copy of the license
-    along with OBDReader; see the file LICENSE.
+    Author:      Massimo Cannavo
 
-    Programmer:  Massimo Cannavo
-    Email:       Massimocannavo15@gmail.com
     Date:        Thu May 07 2015 23:05:20
 
-    Description: The user interface (UI) of
-                 the app creates the interface
-                 that the user will use to
-                 interact with the app.
+    Description: The user interface (UI) of the app creates the interface that
+                 the user will use to interact with the app.
 */
 
 package com.massimoc.obdreader;
@@ -21,17 +16,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
-// The UI is the bridge between the different
-// components of the app. It creates the interface
-// that connects the various aspects of the app.
-public class UI extends Activity {
-
-    // An object of the Bluetooth class used
-    // to interface with the Bluetooth API.
+// The UI is the bridge between the different components of the app.
+// It creates the interface that connects the various aspects of the app.
+public class UI extends Activity
+{
+    // An object of the Bluetooth class used to interface
+    // with the Bluetooth API.
     private Bluetooth mBluetooth;
 
-    // A handler used for sending and receiving
-    // messages from the read thread of the app.
+    // A handler used for sending and receiving messages from
+    // the read thread of the app.
     private static ThreadHandler threadHandler;
 
     // The connection thread for the Bluetooth connection.
@@ -50,7 +44,8 @@ public class UI extends Activity {
     UI() {}
 
     // Initializes the Bluetooth interface.
-    UI(Context context, MainActivity activity) {
+    UI(Context context, MainActivity activity)
+    {
         mBluetooth = new Bluetooth();
         threadHandler = new ThreadHandler(activity);
         connection = new ConnectThread();
@@ -60,56 +55,66 @@ public class UI extends Activity {
     }
 
     // Returns the thread handler.
-    public ThreadHandler getThreadHandler() {
+    public ThreadHandler getThreadHandler()
+    {
         return threadHandler;
     }
 
     // Sets the result of the connection.
-    public void setConnectionResult(boolean result) {
+    public void setConnectionResult(boolean result)
+    {
         connectionResult  = result;
         MainActivity.connectionStatus.setText("OK");
     }
 
-    // Attempts to connect to the Wifi or Bluetooth OBD II dongle.
-    public void connect() {
-        if (!mBluetooth.isSupported()) {
+    // Attempts to connect to the Bluetooth OBD II dongle.
+    public void connect()
+    {
+        if (!mBluetooth.isSupported())
+        {
             Toast.makeText(context, "Make sure that your phone supports Bluetooth.",
                     Toast.LENGTH_LONG).show();
         }
-        else if (!mBluetooth.isEnabled()) {
+
+        else if (!mBluetooth.isEnabled())
+        {
             final int REQUEST_ENABLE_BT = 1;
             Intent enableBluetooth = mBluetooth.enableBluetooth();
             mActivity.startActivityForResult(enableBluetooth, REQUEST_ENABLE_BT);
         }
-        else {
+
+        else
             discover();
-        }
     }
 
-    // Attempts to discover the Bluetooth devices and
-    // connect to a device selected by the user.
-    public void discover() {
+    // Attempts to discover the Bluetooth devices and connect to a device
+    // selected by the user.
+    public void discover()
+    {
         mBluetooth.discoverDevices(context);
     }
 
-    public void diagnostics() {
+    public void diagnostics()
+    {
 
     }
 
-    public void codes() {
+    public void codes()
+    {
 
     }
 
-    public void settings() {
+    public void settings()
+    {
 
     }
 
-    // Queries the OBD for fault codes. On startup,
-    // the checkCodes method will update the user
-    // with that status of the car.
-    public void checkCodes() {
-        if (connectionResult) {
-
+    // Queries the OBD for fault codes. On startup, the checkCodes method
+    // will update the user with that status of the car.
+    public void checkCodes()
+    {
+        if (connectionResult)
+        {
             // Sets the echo to off so that the
             // command is not retransmitted.
             write("AT E0\r");
@@ -120,8 +125,7 @@ public class UI extends Activity {
             // Sets the protocol of OBD to auto.
             write("AT SP 0\r");
 
-            // Queries the logged DTCs
-            // (Diagnostic Trouble Codes).
+            // Queries the logged DTCs (Diagnostic Trouble Codes).
             write("03\r");
         }
     }

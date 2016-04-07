@@ -1,16 +1,12 @@
 <!--
-    Copyright (C) 2015 Massimo Cannavo
+    main_activity.xml
 
-    You should have received a copy of the license
-    along with OBDReader; see the file LICENSE.
+    Author:      Massimo Cannavo
 
-    Programmer:  Massimo Cannavo
-    Email:       Massimocannavo15@gmail.com
     Date:        Sat Apr 04 2015 15:34:48
 
-    Description: The main activity xml file
-                 contains the layout for the
-                 main activity.
+    Description: The main activity xml file contains the layout for the main
+                 activity.
 -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
