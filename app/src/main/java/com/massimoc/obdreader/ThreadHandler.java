@@ -3,7 +3,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Thu May 07 2015 15:31:17
+    Date:        Thu May 07 2015 15:31:17 UTC
 
     Description: A handler that handles the messages sent by the threads of the
                  OBDReader app.

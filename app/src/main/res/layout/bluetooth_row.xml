@@ -5,7 +5,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Thu Apr 02 2015 13:46:17
+    Date:        Thu Apr 02 2015 13:46:17 UTC
 
     Description: The bluetooth row xml file contains the layout for each row of
                  the list view that displays the discovered Bluetooth devices.

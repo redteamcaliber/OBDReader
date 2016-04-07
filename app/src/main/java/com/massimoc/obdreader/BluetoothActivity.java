@@ -3,7 +3,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Wed Apr 01 2015 14:30:19
+    Date:        Wed Apr 01 2015 14:30:19 UTC
 
     Description: The Bluetooth activity of the OBDReader app will interface with
                  the Bluetooth class to display the available Bluetooth devices

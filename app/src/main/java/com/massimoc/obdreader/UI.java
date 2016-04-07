@@ -3,7 +3,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Thu May 07 2015 23:05:20
+    Date:        Thu May 07 2015 23:05:20 UTC
 
     Description: The user interface (UI) of the app creates the interface that
                  the user will use to interact with the app.

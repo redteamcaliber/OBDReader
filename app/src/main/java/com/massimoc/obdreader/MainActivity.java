@@ -3,7 +3,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Wed Apr 01 2015 14:30:19
+    Date:        Wed Apr 01 2015 14:30:19 UTC
 
     Description: The main activity of the OBDReader app is the starting point
                  of the app. It is the interface that the user will use to

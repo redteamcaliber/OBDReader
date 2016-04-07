@@ -3,7 +3,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Mon May 11 2015 22:39:04
+    Date:        Mon May 11 2015 22:39:04 UTC
 
     Description: The MenuArrayAdapter class will create a custom adapter used
                  for displaying the menu of the app.

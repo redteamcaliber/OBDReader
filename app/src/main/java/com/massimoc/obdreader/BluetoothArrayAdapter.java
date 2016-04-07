@@ -3,7 +3,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Wed Apr 01 2015 14:30:19
+    Date:        Wed Apr 01 2015 14:30:19 UTC
 
     Description: The BluetoothArrayAdapter class will create a custom adapter
                  used for displaying the Bluetooth devices that were discovered.

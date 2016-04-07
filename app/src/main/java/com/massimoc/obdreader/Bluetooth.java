@@ -3,7 +3,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Wed Apr 01 2015 18:47:07
+    Date:        Wed Apr 01 2015 18:47:07 UTC
 
     Description: The Bluetooth class interfaces with the Bluetooth API to enable
                  Bluetooth capabilities for the OBDReader app.

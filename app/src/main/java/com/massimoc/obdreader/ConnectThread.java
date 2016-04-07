@@ -3,7 +3,7 @@
 
     Author:      Massimo Cannavo
 
-    Date:        Tue Apr 14 2015 19:00:44
+    Date:        Tue Apr 14 2015 19:00:44 UTC
 
     Description: The ConnectionThread class will interface with the Bluetooth
                  API to initiate and manage a Bluetooth connection.
